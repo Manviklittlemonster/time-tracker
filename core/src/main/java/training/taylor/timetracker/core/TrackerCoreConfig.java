@@ -9,14 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Jason on 6/19/2015.
+ * Configuration class for TrackerCore.
+ * Scans for components in the "training.taylor.timetracker.core" package.
  */
 @Configuration
 @ComponentScan("training.taylor.timetracker.core")
 public class TrackerCoreConfig {
 
+    /**
+     * Defines a bean named "timesheet" that returns a list of TimeEntry objects.
+     *
+     * @return a new ArrayList of TimeEntry.
+     */
     @Bean(name = "timesheet")
     public List<TimeEntry> timeEntries() {
         return new ArrayList<>();
     }
 }
+
