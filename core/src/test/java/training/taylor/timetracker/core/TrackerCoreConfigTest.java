@@ -2,6 +2,7 @@ package training.taylor.timetracker.core;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,36 @@ public class TrackerCoreConfigTest {
     @Autowired
     List<TimeEntry> entries;
 
+    @Before
+    public void setUp() {
+        // Initialize the entries list before each test
+        entries.clear();
+    }
+
     @Test
     public void testMe() {
         assertNotNull(entries);
     }
 
+    @Test
+    public void testAddEntry() {
+        TimeEntry entry = new TimeEntry();
+        entries.add(entry);
+        assertEquals(1, entries.size());
+        assertEquals(entry, entries.get(0));
+    }
+
+    @Test
+    public void testRemoveEntry() {
+        TimeEntry entry = new TimeEntry();
+        entries.add(entry);
+        entries.remove(entry);
+        assertEquals(0, entries.size());
+    }
+
+    @Test
+    public void testEmptyList() {
+        assertEquals(0, entries.size());
+    }
 }
+
