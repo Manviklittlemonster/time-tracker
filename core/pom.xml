@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -11,6 +11,11 @@
     <artifactId>time-tracker-core</artifactId>
     <packaging>jar</packaging>
     <name>Time Tracker (Core)</name>
+
+    <properties>
+        <spring.version>5.3.10</spring.version> <!-- Example version, update as needed -->
+        <junit.version>4.13.2</junit.version> <!-- Example version, update as needed -->
+    </properties>
 
     <dependencies>
         <dependency>
